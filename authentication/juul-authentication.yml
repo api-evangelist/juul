@@ -1,0 +1,68 @@
+generated: '2026-08-23'
+method: probed
+source: https://www.juul.com/.well-known/openid-configuration
+note: >-
+  JUUL Labs publishes no public API and no developer authentication documentation. This profile is
+  derived entirely from the OAuth 2.0 / OIDC discovery document JUUL serves anonymously from its own
+  consumer commerce host — it describes JUUL's FIRST-PARTY sign-in for juul.com and the JUUL mobile
+  app, not a third-party developer program. There is no public client registration, no documented
+  scope reference, and no published token issuance path for outside integrators.
+audience: first-party
+public_developer_program: false
+issuer: https://www.juul.com
+schemes:
+- id: juul-oauth2
+  type: oauth2
+  description: >-
+    OAuth 2.0 authorization server advertised at the OIDC discovery path. The metadata is
+    RFC 8414-shaped (authorization/token/revocation endpoints, grant types, scopes) but omits the
+    OIDC-required jwks_uri and id_token_signing_alg_values_supported, so it is an OAuth 2.0
+    authorization server publishing at the OpenID Connect discovery URL rather than a certified
+    OpenID Provider.
+  flows:
+    authorization_code:
+      authorization_url: https://www.juul.com/sso
+      token_url: https://www.juul.com/oauth/token
+      refresh_url: https://www.juul.com/oauth/token
+      scopes:
+        conx_web: null
+        mobileapp: null
+        keychain: null
+        keychain-force-rebuild: null
+  grant_types:
+  - authorization_code
+  - refresh_token
+  - urn:ietf:params:oauth:grant-type:jwt-bearer
+  response_types:
+  - code
+  - token
+  - password
+  - none
+  token_endpoint_auth_methods:
+  - client_secret_post
+  - client_secret_basic
+  userinfo_url: https://www.juul.com/oauth/token/info
+  revocation_url: https://www.juul.com/oauth/revoke
+  subject_types:
+  - public
+  claims:
+  - exp
+  - iat
+  - iss
+  - locale
+  - sub
+endpoint_reachability:
+  note: >-
+    The authorization, token, userinfo and revocation endpoints named in the metadata all sit behind
+    AWS WAF. An anonymous GET to each returns HTTP 202 with an empty body and the header
+    x-amzn-waf-action: challenge, so their live behaviour could not be observed without solving a
+    bot challenge, which this pipeline does not do.
+  probes:
+  - url: https://www.juul.com/sso
+    status: 202
+  - url: https://www.juul.com/oauth/token
+    status: 202
+  - url: https://www.juul.com/oauth/token/info
+    status: 202
+  - url: https://www.juul.com/oauth/revoke
+    status: 202

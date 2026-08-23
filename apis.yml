@@ -1,17 +1,35 @@
 aid: juul
 name: JUUL
-description: 'JUUL is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'JUUL Labs is the San Francisco-headquartered maker of the JUUL vaporizer, a closed-system
+  electronic nicotine delivery system (ENDS) sold to adult smokers in the United States, the United Kingdom,
+  Canada and a small number of other regulated markets. The company designs and manufactures the JUUL
+  device and its JUULpod cartridges, operates the age-verified direct-to-consumer storefront at juul.com,
+  and pursues FDA Premarket Tobacco Product Application (PMTA) authorization for its products. JUUL Labs
+  is a consumer hardware and regulated tobacco-products company, not a software vendor: it publishes no
+  public API, no developer portal, and no machine-readable API contract. Its engineering organization
+  does maintain a real, actively-released open source presence under the JuulLabs GitHub organization
+  — Kotlin Multiplatform libraries for Bluetooth Low Energy (Kable), CoAP (koap), canvas drawing (krayon),
+  logging (khronicle) and general utilities (tuulbox), published to Maven Central under the com.juul.*
+  group IDs — and it serves a real OAuth 2.0 / OpenID Connect discovery document from its consumer commerce
+  host for its own first-party web and mobile sign-in.'
 url: https://raw.githubusercontent.com/api-evangelist/juul/refs/heads/main/apis.yml
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
+- Consumer Products
+- Nicotine
+- Vaping
+- Hardware
+- Consumer Electronics
+- Bluetooth Low Energy
+- Open Source
+- Kotlin Multiplatform
+- Regulated Industry
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,57 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/juul-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/juul_stock/
+  url: https://www.juullabs.com/
+- type: GitHubOrganization
+  url: https://github.com/JuulLabs
+- type: TermsOfService
+  url: https://www.juullabs.com/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://www.juullabs.com/legal/privacy-policy/
+- type: Support
+  url: https://www.juullabs.com/contact-us/
+- type: Blog
+  url: https://www.juullabs.com/about/newsroom/
+- type: WellKnown
+  url: well-known/juul-well-known.yml
+- type: Authentication
+  url: authentication/juul-authentication.yml
+- type: OAuthScopes
+  url: scopes/juul-scopes.yml
+- type: Conformance
+  url: conformance/juul-conformance.yml
+- type: Packages
+  url: packages/juul-packages.yml
+- type: LLMsTxt
+  url: llms/juul-llms.txt
+- type: Plans
+  url: plans/juul-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/juul-rate-limits.yml
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 9
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: 'JUUL Labs is a consumer nicotine-products manufacturer with no developer program: the corporate
+    site www.juullabs.com returns a real 404 for /developers, /api and every /.well-known path, and the
+    only machine-readable document on any JUUL host is a first-party OAuth 2.0 discovery doc at https://www.juul.com/.well-known/openid-configuration
+    that has no public client registration.'
+  evidence:
+  - url: https://www.juullabs.com/developers
+    status: 404
+  - url: https://www.juullabs.com/api
+    status: 404
+  - url: https://www.juul.com/openapi.json
+    status: 404
+  - url: https://www.juul.com/.well-known/openid-configuration
+    status: 200
+  - url: https://www.juul.com/.well-known/agent-card.json
+    status: 403
+  checked: '2026-08-23'

@@ -1,0 +1,11 @@
+generated: '2026-08-23'
+method: searched
+source: https://www.juullabs.com/
+note: >-
+  JUUL Labs sells a consumer product, not API access. There is no developer plan, no API pricing
+  page, no free tier and no enterprise "contact sales" API motion — the company publishes no API at
+  all. Retail pricing for JUUL devices and JUULpods exists on the age-verified storefront at
+  juul.com, but that is product pricing, not API pricing, and it sits behind an age gate (HTTP 307
+  to /signin) and an AWS WAF challenge, so it was not captured. plan_count is an honest zero.
+plan_count: 0
+plans: []

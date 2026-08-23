@@ -64,5 +64,8 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-JUUL is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/juul_stock/
+JUUL Labs is the maker of the JUUL vaporizer, a closed-system electronic nicotine delivery system sold to adult smokers in the United States, the United Kingdom, Canada and a small number of other regulated markets. It is a consumer hardware and regulated tobacco-products company, and it publishes no public API, no developer portal, and no machine-readable API contract. It does serve a first-party OAuth 2.0 / OpenID Connect discovery document from its consumer commerce host, and it maintains an active open source presence on GitHub.
+
+- https://www.juullabs.com/
+- https://github.com/JuulLabs
+- https://www.juul.com/.well-known/openid-configuration

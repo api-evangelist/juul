@@ -1,0 +1,42 @@
+generated: '2026-08-23'
+method: probed
+source: https://www.juul.com/.well-known/openid-configuration
+note: >-
+  JUUL Labs ships no API contract, so there is no spec to assert against. The only machine-readable
+  surface it serves is an OAuth 2.0 discovery document; the entries below grade that document and
+  nothing else. No domain standard applies — nicotine/tobacco product regulation (US FDA PMTA,
+  UK MHRA TRPR notification) governs the product, not an API message format, so the
+  domain_standard slot is legitimately empty rather than unfilled.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    /.well-known/openid-configuration declares authorization_endpoint, token_endpoint,
+    revocation_endpoint, grant_types_supported (authorization_code, refresh_token,
+    urn:ietf:params:oauth:grant-type:jwt-bearer) and token_endpoint_auth_methods_supported.
+- id: rfc8414-authorization-server-metadata
+  conforms: partial
+  evidence: >-
+    The document carries RFC 8414 authorization-server metadata fields, but is served at the OIDC
+    discovery path (/.well-known/openid-configuration) rather than /.well-known/oauth-authorization-server,
+    which returns HTTP 403 on this host.
+- id: oidc-discovery
+  conforms: false
+  evidence: >-
+    Served at the OIDC discovery path and declares issuer, userinfo_endpoint, subject_types_supported
+    and claims_supported, but omits jwks_uri and id_token_signing_alg_values_supported, both REQUIRED
+    by OpenID Connect Discovery 1.0. Also advertises the non-OIDC response types "password" and "none".
+- id: openapi
+  conforms: false
+  evidence: No OpenAPI or Swagger document found on any JUUL host (see x-coverage in apis.yml).
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming, or webhook surface published.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No API contract to inspect.
+domain_standard:
+  applicable: false
+  note: >-
+    JUUL's market is regulated product markets (FDA PMTA, MHRA TRPR), which prescribe filings and
+    labelling rather than an API message standard. No API-level domain standard exists to conform to.

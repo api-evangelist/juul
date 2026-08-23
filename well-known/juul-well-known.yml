@@ -1,0 +1,67 @@
+generated: '2026-08-23'
+method: searched
+source: live probes of /.well-known/* on every JUUL host reachable from apis.yml
+note: >-
+  JUUL Labs publishes no API and no developer portal, but the age-verified consumer commerce host
+  www.juul.com does serve a real OAuth 2.0 / OpenID Connect discovery document at
+  /.well-known/openid-configuration (HTTP 200, 841 bytes, served from S3 via CloudFront,
+  Last-Modified 2026-08-21). Its issuer is https://www.juul.com, so the document is first-party.
+  Every other /.well-known path on that host returns HTTP 403 from CloudFront/S3 (AccessDenied XML,
+  not a document). The corporate host www.juullabs.com is WordPress and returns a real HTTP 404
+  page for every /.well-known path. The regional storefront www.juul.co.uk serves the identical
+  document from the same origin, and its issuer also names https://www.juul.com.
+hit_count: 1
+hosts:
+- host: https://www.juul.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: juul-openid-configuration.json
+    content_type: binary/octet-stream
+    note: OAuth 2.0 / OIDC discovery document for JUUL's first-party consumer sign-in.
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+- host: https://www.juullabs.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.juul.co.uk
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: juul-openid-configuration.json
+    note: >-
+      Byte-identical to the www.juul.com document (same S3 origin, same issuer
+      https://www.juul.com). Not saved a second time.
+soft_404_control:
+  host: https://www.juullabs.com
+  path: /this-path-should-not-exist-xyz
+  status: 404
+  bytes: 30213
+  note: Control probe confirms www.juullabs.com returns real 404s, not catch-all 200s.

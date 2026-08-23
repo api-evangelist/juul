@@ -1,0 +1,135 @@
+generated: '2026-08-23'
+method: searched
+source: >-
+  https://repo1.maven.org/maven2/com/juul/ (maven-metadata.xml per artifact) and
+  https://github.com/JuulLabs
+note: >-
+  IMPORTANT — these are NOT API client SDKs. JUUL Labs publishes no API, so it ships no client
+  library for one. What it does publish, and publishes actively, is a first-party open source
+  portfolio of general-purpose Kotlin Multiplatform libraries under the com.juul.* Maven group IDs,
+  released from the JuulLabs GitHub organization. They are recorded here because they are genuine,
+  dated, first-party published packages and their release cadence is real evidence about the
+  company's engineering surface — but they wrap Bluetooth, CoAP, canvas drawing, logging and
+  collections, not a JUUL service. No `SDKs` pointer is emitted for this artifact, because awarding
+  the SDK check here would credit JUUL with client libraries for an API it does not operate.
+api_client_packages: 0
+registries_checked:
+- registry: maven-central
+  result: 428 com.juul.* artifacts across 10 group IDs
+- registry: npm
+  result: no @juul or @juullabs scope; JuulLabs publishes no npm package
+packages:
+- name: com.juul.kable:kable-core
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.kable/kable-core
+  repository: https://github.com/JuulLabs/kable
+  install: implementation("com.juul.kable:kable-core:0.44.3")
+  official: true
+  api_client: false
+  version: 0.44.3
+  published: '2026-07-23'
+  description: Kotlin Multiplatform asynchronous Bluetooth Low Energy (Android, iOS, JS, JVM, macOS).
+- name: com.juul.tuulbox:collections
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.tuulbox/collections
+  repository: https://github.com/JuulLabs/tuulbox
+  install: implementation("com.juul.tuulbox:collections:8.1.1")
+  official: true
+  api_client: false
+  version: 8.1.1
+  published: '2026-07-22'
+  description: >-
+    Toolbox of Kotlin Multiplatform utilities. Sibling artifacts (coroutines, encoding, functional,
+    logging) ship at the same version from the same repository.
+- name: com.juul.koap:koap-core
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.koap/koap-core
+  repository: https://github.com/JuulLabs/koap
+  install: implementation("com.juul.koap:koap-core:0.13.0")
+  official: true
+  api_client: false
+  version: 0.13.0
+  published: '2026-06-22'
+  description: Kotlin CoAP (RFC 7252) encoder/decoder.
+- name: com.juul.khronicle:khronicle-core
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.khronicle/khronicle-core
+  repository: https://github.com/JuulLabs/khronicle
+  install: implementation("com.juul.khronicle:khronicle-core:1.1.0")
+  official: true
+  api_client: false
+  version: 1.1.0
+  published: '2026-05-07'
+  description: Kotlin Multiplatform logging.
+- name: com.juul.datadog:datadog
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.datadog/datadog
+  repository: https://github.com/JuulLabs/datadog-kmp
+  install: implementation("com.juul.datadog:datadog:0.6.1")
+  official: true
+  api_client: false
+  version: 0.6.1
+  published: '2026-02-24'
+  description: >-
+    Kotlin Multiplatform API for Datadog. A third-party vendor's telemetry API wrapped by JUUL for
+    its own apps — the wrapped API belongs to Datadog, not to JUUL.
+- name: com.juul.krayon:core
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.krayon/core
+  repository: https://github.com/JuulLabs/krayon
+  install: implementation("com.juul.krayon:core:0.24.0")
+  official: true
+  api_client: false
+  version: 0.24.0
+  published: '2026-02-02'
+  description: Cross-platform canvas/charting library (Android, iOS, JS, JVM, macOS, wasm).
+- name: com.juul.indexeddb:core
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.indexeddb/core
+  repository: https://github.com/JuulLabs/indexeddb
+  install: implementation("com.juul.indexeddb:core:0.12.0")
+  official: true
+  api_client: false
+  version: 0.12.0
+  published: '2026-01-23'
+  description: Kotlin coroutines wrapper for the browser IndexedDB API.
+- name: com.juul.exercise:annotations
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.exercise/annotations
+  repository: https://github.com/JuulLabs/exercise
+  install: implementation("com.juul.exercise:annotations:0.13.0")
+  official: true
+  api_client: false
+  version: 0.13.0
+  published: '2025-02-11'
+  description: Annotation processor for Android activity intent extras.
+- name: com.juul.pommel:annotations
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.pommel/annotations
+  repository: https://github.com/JuulLabs/pommel
+  install: implementation("com.juul.pommel:annotations:0.2.0")
+  official: true
+  api_client: false
+  version: 0.2.0
+  published: '2020-09-10'
+  description: Reflection helper for Dagger. Dormant — no release since 2020.
+- name: com.juul.able:core
+  language: kotlin
+  registry: maven
+  url: https://central.sonatype.com/artifact/com.juul.able/core
+  repository: https://github.com/JuulLabs/able
+  install: implementation("com.juul.able:core:0.8.1")
+  official: true
+  api_client: false
+  version: 0.8.1
+  published: '2020-12-15'
+  description: Android Bluetooth Low Energy library. Superseded by Kable; the repository is archived.

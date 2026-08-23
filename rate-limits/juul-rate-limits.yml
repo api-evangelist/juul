@@ -1,0 +1,11 @@
+generated: '2026-08-23'
+method: searched
+source: https://www.juullabs.com/
+note: >-
+  No published rate limits, because there is no published API. The only machine-readable surface JUUL
+  serves is /.well-known/openid-configuration, which carries no rate-limit metadata, and the OAuth
+  endpoints it names are behind an AWS WAF challenge (HTTP 202, x-amzn-waf-action: challenge) so no
+  runtime rate-limit headers could be observed on an anonymous request. limit_count is an honest zero.
+limit_count: 0
+limits: []
+headers: []
