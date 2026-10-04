@@ -53,7 +53,7 @@ tags:
 - Hardware
 - Consumer Electronics
 - Bluetooth Low Energy
-- Open-Source
+- Open Source
 - Kotlin Multiplatform
 - Regulated Industry
 tags_raw:
@@ -67,6 +67,7 @@ tags_raw:
 - Open Source
 - Kotlin Multiplatform
 - Regulated Industry
+- Open-Source
 apis: []
 maintainers:
 - FN: Kin Lane
