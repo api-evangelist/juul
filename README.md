@@ -64,8 +64,103 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-JUUL Labs is the maker of the JUUL vaporizer, a closed-system electronic nicotine delivery system sold to adult smokers in the United States, the United Kingdom, Canada and a small number of other regulated markets. It is a consumer hardware and regulated tobacco-products company, and it publishes no public API, no developer portal, and no machine-readable API contract. It does serve a first-party OAuth 2.0 / OpenID Connect discovery document from its consumer commerce host, and it maintains an active open source presence on GitHub.
+JUUL Labs is the San Francisco-headquartered maker of the JUUL vaporizer, a closed-system electronic nicotine delivery system (ENDS) sold to adult smokers in the United States, the United Kingdom, Canada and a small number of other regulated markets. The company designs and manufactures the JUUL device and its JUULpod cartridges, operates the age-verified direct-to-consumer storefront at juul.com, and pursues FDA Premarket Tobacco Product Application (PMTA) authorization for its products. JUUL Labs is a consumer hardware and regulated tobacco-products company, not a software vendor: it publishes no public API, no developer portal, and no machine-readable API contract. Its engineering organization does maintain a real, actively-released open source presence under the JuulLabs GitHub organization — Kotlin Multiplatform libraries for Bluetooth Low Energy (Kable), CoAP (koap), canvas drawing (krayon), logging (khronicle) and general utilities (tuulbox), published to Maven Central under the com.juul.* group IDs — and it serves a real OAuth 2.0 / OpenID Connect discovery document from its consumer commerce host for its own first-party web and mobile sign-in.
 
-- https://www.juullabs.com/
-- https://github.com/JuulLabs
-- https://www.juul.com/.well-known/openid-configuration
+**Areas:** Company · Consumer Products · Nicotine · Vaping · Hardware · Consumer Electronics · Bluetooth Low Energy · Open Source · Kotlin Multiplatform · Regulated Industry
+
+## JUUL on APIs.io
+
+Everything profiled for JUUL is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/juul/](https://apis.io/providers/juul/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Juul Authentication](https://apis.io/security/juul/juul-authentication/)
+- [Juul Domain Security](https://apis.io/security/juul/juul-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Juul Scopes](https://apis.io/scopes/juul/juul-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Juul Plans Pricing](https://apis.io/plans/juul/juul-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Juul Rate Limits](https://apis.io/rate-limits/juul/juul-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.juullabs.com/)
+- [Support](https://www.juullabs.com/contact-us/)
+- [Blog](https://www.juullabs.com/about/newsroom/)
+- [Terms of service](https://www.juullabs.com/terms-and-conditions/)
+- [Privacy policy](https://www.juullabs.com/legal/privacy-policy/)
+- [GitHub](https://github.com/JuulLabs)
+
+## API Evangelist rating
+
+**Kin Score 18.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 21.1 |
+
+**Agent readiness 13.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 34.4** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/juul/](https://apis.io/providers/juul/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for JUUL: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/juul/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
